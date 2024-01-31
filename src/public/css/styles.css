@@ -1,0 +1,348 @@
+body {
+    /*background-image: url("../img/bg.jpg");*/
+    background-color: rgb(191, 231, 218);
+    background-size: contain;
+}
+
+.containerNew {
+    background-color: #e2e5baa8;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    text-align: start;
+    padding: 10px;
+}
+
+.premio-1, .premio-2, .premio-3{
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.containerNew > h1, .containerNew > .cotas{
+    text-align: center;
+}
+
+.cotas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.rounded-3 {
+    background-color: rgba(27, 138, 81, 0.356) !important;
+}
+
+.container-fluid {
+    background-color: #e2e5baa8 !important;
+    border-radius: 8px;
+}
+
+.containerOld {
+    display: flex;
+}
+
+.tituloCont {
+    display: flex;
+    align-items: center;
+}
+
+.widthRed {
+    width: calc(10% - 20px);
+    /* Utilize a porcentagem que você precisa e ajuste a margem conforme necessário */
+    margin: 10px;
+    text-align: center;
+}
+
+.myCards {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 50%;
+
+}
+
+.descCards {
+    margin-top: 5px;
+}
+
+.navbarrr {
+    margin: 20px;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    width: 80%;
+    border-radius: 6px;
+    text-align: center;
+    overflow-y: auto;
+    user-select: none;
+    transition: width 1s ease;
+}
+.navbarrr .card-body{
+    padding: 10px !important;
+}
+
+.expande {
+    animation: expandir 0.5s ease;
+}
+
+.contrai {
+    animation: contrai 0.5s ease;
+}
+
+/* @keyframes para a animação */
+@keyframes expandir {
+    0% {
+        width: 30%;
+        /* Largura inicial de 30% */
+    }
+
+    100% {
+        width: 90%;
+        /* Largura final automática */
+    }
+}
+
+/* @keyframes para a animação */
+@keyframes contrai {
+    0% {
+        width: 90%;
+        /* Largura inicial de 30% */
+    }
+
+    100% {
+        width: 30%;
+        /* Largura final automática */
+    }
+}
+
+.conteudo-x {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 0 0 0 8px;
+    background-color: #fb1414;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.topo {
+    z-index: 1;
+}
+.titleOfert{
+    background-color: #198754;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.topo input {
+    border-radius: 8px;
+    border: 1px solid green;
+    margin-bottom: 5px;
+}
+
+.navbarrr h5 {
+    color: rgb(51, 35, 35);
+}
+
+.numsEscolhidos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.botoesCotas{
+    flex: 0.5
+}
+.numZim {
+    background-color: white;
+    text-align: center;
+    width: calc(20% - 20px);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 2px;
+    font-size: 16px;
+}
+.collapse{
+    margin: 0 !important
+}
+
+.disponivel {
+    background-color: rgb(56, 176, 56);
+}
+
+.selecionado {
+    background-color: blue;
+    box-shadow: 0 5px 0px rgb(0, 0, 92) !important;
+    border: 2px solid rgb(0,0,92) !important;
+}
+
+.indisponivel {
+    background-color: red;
+    box-shadow: none;
+    border: none;
+    cursor: none;
+}
+
+.divzinha{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.valor, #cotas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    width: 50%;
+}
+.qntdNumeros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.qntdNumeros button{
+    border-radius: 8px;
+    margin-bottom: -10px;
+    margin-left:10px;
+     margin-right: 10px;
+}
+
+.botaoSub{
+    padding-top: 15px;
+}
+.containerNew button {
+    transition: all 0.1s ease-in;
+    box-shadow: 0 5px 0px rgb(38, 118, 38);
+    border: 2px solid rgb(38, 118, 38);
+}
+
+.containerNew button:active {
+  transform: translateY(4px);
+  border-bottom-width: 2px;
+  box-shadow: none;
+}
+
+
+.containerPagamento {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pixQR {
+    width: 300px;
+}
+
+.whatsButton {
+    width: 100px;
+    cursor: pointer;
+}
+
+.containerLiberaAposta {
+    display: flex;
+    justify-content: space-around;
+}
+
+.infosApostas {
+    width: calc(20% - 20px);
+    margin: 10px;
+}
+
+.infosApostas a {
+    margin: 0 auto;
+}
+
+.status {
+    color: rgb(3, 62, 77);
+    background-color: white;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.pago {
+    color: green;
+}
+
+.naoPago {
+    color: red;
+}
+
+
+
+@media (max-width: 768px) {
+    .containerNew {
+        width: 70%;
+        margin-left: 0;
+    }
+
+    .widthRed {
+        width: calc(33% - 20px);
+        margin-left: 0;
+    }
+
+    .numZim {
+        width: calc(30% - 10px);
+        border-radius: 8px;
+        margin: 5px;
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .navbarrr {
+        position: fixed;
+        padding: 10px;
+        width: 30%;
+        border-radius: 6px;
+        text-align: center;
+        overflow-y: auto;
+    }
+
+
+    .containerPagamento,
+    .containerLiberaAposta {
+        display: block;
+
+    }
+
+    .infosUser,
+    .infosApostas {
+        margin: 0 auto;
+    }
+
+    .pixQR,
+    .infosApostas {
+        width: auto;
+    }
+
+    .titleOfert{
+        width: auto
+    }
+
+
+}

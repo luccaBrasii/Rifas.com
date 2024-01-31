@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="../../../public/css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="../../public/img/cannabis.png" type="image">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifas.com</title>
+</head>
+
+<body>
+    {{>_navbar}}
+
+    <div class="container mt-4">
+        {{#if error}}
+                <div class='alert alert-danger'>{{error}}</div >
+            {{else}}
+        {{/if}}
+
+        {{>_msg}}
+        {{{body}}}
+    </div>
+    
+</body>
+
+<script src="../../../public/js/bootstrap.js"></script>
+
+
+
+
+
+</html>

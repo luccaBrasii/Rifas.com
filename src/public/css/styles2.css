@@ -1,0 +1,54 @@
+body{
+    background-image: url("../img/bg.jpg");
+    background-size: contain;
+}
+.status{
+    text-align: center;
+    color: rgb(3, 62, 77);     
+    background-color: white;  
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.rounded-3{
+    background-color: rgba(27, 138, 81, 0.356) !important;
+}
+.container-fluid {
+    background-color: rgba(255, 255, 255, 0.767) !important;
+    border-radius: 8px;
+}
+.tituloCont{
+    display: flex;
+    align-items: center;
+}
+
+.titulos{
+    background-color: rgba(27, 138, 81) ;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.numbers{
+    margin: 0;
+    font-weight: bold;
+    
+}
+
+.headerCard{
+    text-align: center;
+}
+
+.naoPago{
+    color: red;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+
+    .infosApostas{
+        margin: 0 auto !important;
+        margin-bottom: 20px !important;
+    }
+}
