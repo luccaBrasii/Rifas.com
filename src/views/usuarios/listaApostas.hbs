@@ -1,70 +1,43 @@
 <link href="../../public/css/styles2.css" rel="stylesheet">
 
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-        <div class="tituloCont">
-            <h1 class="display-6 fw-bold">Sorteio JOTA 4:20</h1>
-            <img src="../public/img/logo.png" style="width: 200px;">
-        </div>
-        <!--SÓ APARECE SE O USUARIO ESTIVER DESLOGADO // ESSA VARIAVEL USER VEM LA VARIAVEL GLOBAL FLASH USER-->
-        {{#if user}}
-        <h2>Seja bem vindo {{user.nome}}</h2>
-        {{else}}
-        {{/if}}
-        <a href="/" class="btn btn-primary">Inicio</a>
-        <a href="/participantes" class="btn btn-primary">Participantes</a>
-        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Regras
-        </a>
 
-        <div class="collapse" id="collapseExample2">
-            <div class="card card-body">
 
-                <p>•Quantidade de bilhetes: Serão disponibilizados 100 bilhetes numerados para a rifa, cada bilhete da rifa custa R$ 5,00 (cinco reais) e tem um número único.</p>
-
-                <p>•Prazo para sorteio: O prazo para venda dos bilhetes e participação na rifa será de 1 semana a partir da data de início das vendas ou até que todos os 100 números disponíveis sejam esgotados, o que ocorrer primeiro.</p>
-
-                <p>•Dados para contato: Os dados de contato, como nome e telefone, serão de responsabilidade dos participantes ao adquirir os bilhetes. Essas informações serão utilizadas para entrar em contato com o ganhador após o sorteio.</p>
-
-                <p>•Sorteio ao vivo no Instagram: O sorteio será realizado ao vivo no Instagram, em uma data e horário previamente divulgados.</p>
-
-            </div>
-        </div>
-</div>
 <div class="container">
     <h5 class="titulos">Participantes: </h5>
-    <div class="row row-cols-1">
-{{#each apostas}}
-        
+    <div class="row row-cols-1 containerCotas">
+        {{#each apostas}}
+
         <div class="card text-white bg-success m-1 infosApostas col" style="max-width: 18rem;">
             <div class="card-header headerCard">
-                <h5 style="text-align: center;">Números: </h5>
-                    <div class="status">
-                        
+                <h5 style="text-align: center;">Cotas: </h5>
+                <div class="cotas_participantes">
 
-                        {{#if (eq this.status 'Aguardando pagamento..') }}
-                            <p class="numbers">Aguardando pagamento..</p>
-                        {{else}}
-                            <p class="numbers">{{this.numeros}}</p>
-                        {{/if}}
-                    </div>
-                
+
+                    {{#if (eq this.status 'Aguardando pagamento..') }}
+                    <p class="status naoPago">Aguardando pagamento para gerar cotas</p>
+                    {{else}}
+                    {{#each this.numeros}}
+                    <p class="numbers">{{this}}</p>
+                    {{/each}}
+                    {{/if}}
+                </div>
+
                 <small>{{dateFormat this.data}}</small>
             </div>
             <div class="card-body">
                 <p class="card-text"><strong>Participante:</strong> {{this.nome}}</p>
-                
+
                 {{#if (eq this.status 'Aguardando pagamento..') }}
-                    <p class="card-text status naoPago">{{this.status}}</p>
+                <p class="card-text status naoPago">{{this.status}}</p>
                 {{else}}
-                    <p class="card-text status pago">{{this.status}}</p>
+                <p class="card-text status pago">{{this.status}}</p>
                 {{/if}}
-                
+
             </div>
-            
+
         </div>
-    {{else}}
+        {{else}}
         <h5>Nenhuma aposta registrada!</h5>
-    {{/each}}
-</div>
+        {{/each}}
     </div>
+</div>

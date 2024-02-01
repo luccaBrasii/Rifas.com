@@ -6,7 +6,6 @@ body {
 
 .containerNew {
     background-color: #e2e5baa8;
-    width: 80%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -15,16 +14,19 @@ body {
     padding: 10px;
 }
 
-.premio-1, .premio-2, .premio-3{
+.premio-1,
+.premio-2,
+.premio-3 {
     padding: 10px;
     border: 2px solid white;
 }
 
-.containerNew > h1, .containerNew > .cotas{
+.containerNew>h1,
+.containerNew>.cotas {
     text-align: center;
 }
 
-.cotas{
+.cotas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,9 +48,16 @@ body {
 }
 
 .tituloCont {
-    display: flex;
-    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+.container-fluid>a {
+    width: 130px;
+    margin: 4px;
+}
+
+
 
 .widthRed {
     width: calc(10% - 20px);
@@ -73,18 +82,19 @@ body {
 }
 
 .navbarrr {
-    margin: 20px;
+    width: 100%;
+    margin: 10px;
     right: 0;
     bottom: 0;
-    padding: 10px;
-    width: 80%;
+    padding: 4px;
     border-radius: 6px;
     text-align: center;
     overflow-y: auto;
     user-select: none;
     transition: width 1s ease;
 }
-.navbarrr .card-body{
+
+.navbarrr .card-body {
     padding: 10px !important;
 }
 
@@ -141,12 +151,14 @@ body {
 .topo {
     z-index: 1;
 }
-.titleOfert{
+
+.titleOfert {
     background-color: #198754;
     color: white;
-    padding: 5px;
+    padding: 4px 8px;
     border-radius: 8px;
-    width: 50%;
+    text-align: center;
+
 }
 
 .topo input {
@@ -165,9 +177,10 @@ body {
     justify-content: center;
 }
 
-.botoesCotas{
+.botoesCotas {
     flex: 0.5
 }
+
 .numZim {
     background-color: white;
     text-align: center;
@@ -177,7 +190,8 @@ body {
     padding: 2px;
     font-size: 16px;
 }
-.collapse{
+
+.collapse {
     margin: 0 !important
 }
 
@@ -188,7 +202,7 @@ body {
 .selecionado {
     background-color: blue;
     box-shadow: 0 5px 0px rgb(0, 0, 92) !important;
-    border: 2px solid rgb(0,0,92) !important;
+    border: 2px solid rgb(0, 0, 92) !important;
 }
 
 .indisponivel {
@@ -198,13 +212,15 @@ body {
     cursor: none;
 }
 
-.divzinha{
+.divzinha {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-.valor, #cotas{
+
+.valor,
+#cotas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,24 +229,26 @@ body {
     border-radius: 8px;
     width: 50%;
 }
-.qntdNumeros{
+
+.qntdNumeros {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    
+
 }
 
-.qntdNumeros button{
+.qntdNumeros button {
     border-radius: 8px;
     margin-bottom: -10px;
-    margin-left:10px;
-     margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.botaoSub{
+.botaoSub {
     padding-top: 15px;
 }
+
 .containerNew button {
     transition: all 0.1s ease-in;
     box-shadow: 0 5px 0px rgb(38, 118, 38);
@@ -238,9 +256,9 @@ body {
 }
 
 .containerNew button:active {
-  transform: translateY(4px);
-  border-bottom-width: 2px;
-  box-shadow: none;
+    transform: translateY(4px);
+    border-bottom-width: 2px;
+    box-shadow: none;
 }
 
 
@@ -275,7 +293,12 @@ body {
 }
 
 .infosApostas a {
-    margin: 0 auto;
+    margin: 4px auto;
+
+}
+
+.infosApostas button {
+    padding: 20px 40px;
 }
 
 .status {
@@ -295,11 +318,11 @@ body {
 
 
 
+
+
+
 @media (max-width: 768px) {
-    .containerNew {
-        width: 70%;
-        margin-left: 0;
-    }
+
 
     .widthRed {
         width: calc(33% - 20px);
@@ -314,14 +337,11 @@ body {
         padding: 0px;
     }
 
-    .navbarrr {
-        position: fixed;
-        padding: 10px;
-        width: 30%;
-        border-radius: 6px;
+    .botoesCotas {
+        margin: 4px;
         text-align: center;
-        overflow-y: auto;
     }
+
 
 
     .containerPagamento,
@@ -340,7 +360,7 @@ body {
         width: auto;
     }
 
-    .titleOfert{
+    .titleOfert {
         width: auto
     }
 

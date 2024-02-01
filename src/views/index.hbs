@@ -1,146 +1,95 @@
 <link rel="stylesheet" href="../public/css/styles.css">
 
 
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-        <div class="tituloCont">
-            <h1 class="display-6 fw-bold">Sorteio Rifas.com</h1>
-            
-            <!--<img src="../public/img/logo.png" style="width: 200px;">-->
-        </div>
-        
-        <!--SÓ APARECE SE O USUARIO ESTIVER DESLOGADO // ESSA VARIAVEL USER VEM LA VARIAVEL GLOBAL FLASH USER-->
-        {{#if user}}
-        <h2>Seja bem vindo {{user.nome}}</h2>
-        {{else}}
-        <h5 class="titleOfert">Quer ganhar vários prémios por R$0,50 centavos? Partice do sorteio e concorra!</h5>
-        {{/if}}
-        <a href="/" class="btn btn-success m-2">Inicio</a>
-        <a href="/participantes" class="btn btn-success m-2">Participantes</a>
-        <a class="btn btn-success m-2" data-bs-toggle="collapse" href="#collapseExample99" role="button"
-            aria-expanded="false" aria-controls="collapseExample">
-            Prêmios
-        </a>
 
-        
-        <a class="btn btn-success m-2" data-bs-toggle="collapse" href="#collapseExample2" role="button"
-            aria-expanded="false" aria-controls="collapseExample">
-            Regras
-        </a>
 
-        <div class="collapse" id="collapseExample99">
-            <div class="card card-body">
 
-                <p><strong>• 1º lugar: R$100</strong></p>
-                <p><strong>• 2º lugar: R$70</strong></p>
-                <p><strong>• 3º lugar: R$50</strong></p>
+<input type="hidden" id="numeros" value="{{numeros}}">
 
-            </div>
+
+
+
+<hr>
+<section class="containerOld">
+
+    <div class="containerNew">
+        <h1>Prêmios:</h1>
+
+        <div class="premio-1">
+            <h1>Primeiro prêmio: PS4 ou R$3000 no pix</h1>
         </div>
 
-        <div class="collapse" id="collapseExample2">
-            <div class="card card-body">
-
-                <p id="infoBilhetes"></p>
-
-                <p><strong>•Prazo para sorteio:</strong> O prazo para venda dos bilhetes e participação na rifa será de
-                    2 semanas a partir da data de início das vendas ou até que todos os números disponíveis sejam
-                    esgotados, o que ocorrer primeiro.</p>
-
-                <p><strong>•Dados para contato:</strong> Os dados de contato, como nome e telefone, serão de
-                    responsabilidade dos participantes ao adquirir os bilhetes. Essas informações serão utilizadas para
-                    entrar em contato com o ganhador após o sorteio.</p>
-
-                <p><strong>•Sorteio ao vivo no Instagram:</strong> O sorteio será realizado ao vivo no Instagram
-                    <strong><a href="https://www.instagram.com/jo_ta77/?hl=fr" target="_blank">@jo_ta77</a></strong>, em
-                    uma data e horário previamente divulgados.</p>
-
-            </div>
+        <div class="premio-2">
+            <h1>Segundo prêmio: Iphone X ou R$1000 no pix</h1>
         </div>
-    </div>
 
-    <input type="hidden" id="numeros" value="{{numeros}}">
-
-
-
-
-    <hr>
-    <section class="containerOld">
-
-        <div class="containerNew">
-            <h1>Prêmios:</h1>
-
-            <div class="premio-1">
-                <h1>Primeiro prêmio: PS4 ou R$3000 no pix</h1>
-            </div>
-
-            <div class="premio-2">
-                <h1>Segundo prêmio: Iphone X ou R$1000 no pix</h1>
-            </div>
-
-            <div class="premio-3">
-                <h1>Terceiro prêmio: R$500 no pix</h1>
-            </div>
+        <div class="premio-3">
+            <h1>Terceiro prêmio: R$500 no pix</h1>
+        </div>
 
 
-            <div class="cotas">
-                <h3>Por apenas  <p type="button" class="btn btn-dark">R$0,50 centavos!</p></h3>
+        <div class="cotas">
+            <h3>Por apenas <br>
+                <p type="button" class="btn btn-dark">R$0,50 centavos!</p>
+            </h3>
 
-                <div class="navbarrr bg-success" id="myDiv">
-            <div class="conteudo-x" data-bs-toggle="collapse" data-bs-target="#collapseExample">-</div>
-            <h5 style="color: white;">Selecione a quantidade de números:</h5>
+            <div class="navbarrr bg-success" id="myDiv">
+
+                <h5 style="color: white;">Selecione a quantidade de números:</h5>
 
 
-            <div class="numsEscolhidos">
-                <button type="button" class="btn btn-primary botoesCotas" name="5">+ 5 números</button>
-                <button type="button" class="btn btn-primary botoesCotas" name="15">+ 15 números</button><br>
-                <button type="button" class="btn btn-primary botoesCotas" name="25">+ 25 números</button>
-                <button type="button" class="btn btn-primary botoesCotas"name="50">+ 50 números</button>
-            </div>
-            <hr>
-
-            <div class="divzinha">
-                <div class="qntdNumeros">
-                    <button id="addCota">+</button>
-                    <strong id="cotas">Cotas: 0</strong>
-                    <button id="removeCota">-</button>
+                <div class="numsEscolhidos">
+                    <button type="button" class="btn btn-primary botoesCotas" name="5">+ 5<br> números</button>
+                    <button type="button" class="btn btn-primary botoesCotas" name="15">+ 15
+                        <br>números</button>
+                    <button type="button" class="btn btn-primary botoesCotas" name="25">+ 25<br> números</button>
+                    <button type="button" class="btn btn-primary botoesCotas" name="50">+ 50 <br>números</button>
                 </div>
-                <div class="valor">
-                    <strong id="valorRS">Valor: R$0</strong>
-                </div>
-            </div>
+                <hr>
 
-            <div class="botaoSub">
-
-                <button class="btn  btn-success" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
-                    id="continue">
-                    Continuar
-                </button>
-                </p>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body topo">
-
-                        <input type="text" placeholder="Nome..." name="nome" id="nome" required>
-                        <input type="number" placeholder="Telefone..." name="telefone" id="telefone" required>
-                        <input type="text" placeholder="Instagram (opcional).." name="insta" id="insta">
-
-                        <button id="pagar" type="submit" class="btn btn-success">PAGAR</button>
-
+                <div class="divzinha">
+                    <div class="qntdNumeros">
+                        <button id="addCota">+</button>
+                        <strong id="cotas">Cotas: 0</strong>
+                        <button id="removeCota">-</button>
+                    </div>
+                    <div class="valor">
+                        <strong id="valorRS">Valor: R$0</strong>
                     </div>
                 </div>
 
+                <div class="botaoSub">
+
+                    <button class="btn  btn-success" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+                        id="continue">
+                        Continuar
+                    </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body topo">
+
+                            <input type="text" placeholder="Nome..." name="nome" id="nome" required>
+                            <input type="number" placeholder="Telefone..." name="telefone" id="telefone" required>
+                            <input type="text" placeholder="Instagram (opcional).." name="insta" id="insta">
+
+                            <button id="pagar" type="submit" class="btn btn-success">PAGAR</button>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            </div>
-            
-            
+
+
 
         </div>
 
-        </div>
+    </div>
 
-        
 
-    </section>
 
-    <script src="../public/js/scripts.js"></script>
+</section>
+
+
+<script src="../public/js/scripts.js"></script>

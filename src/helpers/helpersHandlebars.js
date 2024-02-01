@@ -33,24 +33,3 @@ const Handlebars = require('handlebars')
     return dataFormt;
   })
 
-  Handlebars.registerHelper("iconDoc", function (data){
-    let dado = String(data)
-
-    if(dado === 'excel'){
-        return '/public/img/icons/excel.png'
-    }else if(dado === 'word'){
-        return '/public/img/icons/word.png'
-    }else if(dado === 'pdf'){
-        return '/public/img/icons/pdf.png'
-    }else if(dado === 'img'){
-        return '/public/img/icons/picture.png'
-    }else if(dado === 'audio'){
-        return '/public/img/icons/audio-file.png'
-    }else if(dado === 'texto'){
-        return '/public/img/icons/note.png'
-    }else if(dado === 'video'){
-        return '/public/img/icons/video-player.png'
-    }else if(dado === 'zip'){
-        return '/public/img/icons/zip.png'
-    }
-  })

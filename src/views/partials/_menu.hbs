@@ -1,0 +1,60 @@
+<link href="../../public/css/styles.css" rel="stylesheet">
+
+<div class="container-fluid py-5">
+    <div class="tituloCont">
+        <h1 class="display-6 fw-bold">Sorteio Rifas.com</h1>
+
+        <!--<img src="../public/img/logo.png" style="width: 200px;">-->
+    </div>
+
+    <!--SÓ APARECE SE O USUARIO ESTIVER DESLOGADO // ESSA VARIAVEL USER VEM LA VARIAVEL GLOBAL FLASH USER-->
+    {{#if user}}
+    <h2>Seja bem vindo {{user.nome}}</h2>
+    {{else}}
+    <h5 class="titleOfert">Quer ganhar vários prémios por R$0,50 centavos?<br> Partice do sorteio e concorra!</h5>
+    {{/if}}
+
+
+    <a href="/" class="btn btn-success ">Inicio</a>
+    <a href="/participantes" class="btn btn-success ">Participantes</a>
+    <a class="btn btn-success m-2" data-bs-toggle="collapse" href="#collapseExample99" role="button"
+        aria-expanded="false" aria-controls="collapseExample">
+        Prêmios
+    </a>
+
+
+    <a class="btn btn-success " data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Regras
+    </a>
+
+    <div class="collapse" id="collapseExample99">
+        <div class="card card-body">
+
+            <p><strong>• 1º lugar: R$100</strong></p>
+            <p><strong>• 2º lugar: R$70</strong></p>
+            <p><strong>• 3º lugar: R$50</strong></p>
+
+        </div>
+    </div>
+
+    <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+
+            <p id="infoBilhetes"></p>
+
+            <p><strong>•Prazo para sorteio:</strong> O prazo para venda dos bilhetes e participação na rifa será de
+                2 semanas a partir da data de início das vendas ou até que todos os números disponíveis sejam
+                esgotados, o que ocorrer primeiro.</p>
+
+            <p><strong>•Dados para contato:</strong> Os dados de contato, como nome e telefone, serão de
+                responsabilidade dos participantes ao adquirir os bilhetes. Essas informações serão utilizadas para
+                entrar em contato com o ganhador após o sorteio.</p>
+
+            <p><strong>•Sorteio ao vivo no Instagram:</strong> O sorteio será realizado ao vivo no Instagram
+                <strong><a href="https://www.instagram.com/jo_ta77/?hl=fr" target="_blank">@jo_ta77</a></strong>, em
+                uma data e horário previamente divulgados.
+            </p>
+
+        </div>
+    </div>

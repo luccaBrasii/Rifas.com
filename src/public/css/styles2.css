@@ -1,29 +1,43 @@
-body{
-    background-image: url("../img/bg.jpg");
-    background-size: contain;
-}
-.status{
+.status {
     text-align: center;
-    color: rgb(3, 62, 77);     
-    background-color: white;  
-    padding: 2px;
+    color: rgb(3, 62, 77);
+    background-color: white;
+    padding: 2px 8px;
     border-radius: 8px;
+    position: relative;
+    bottom: 0;
 }
 
-.rounded-3{
+.cotas_participantes {
+    text-align: center;
+    color: rgb(3, 62, 77);
+    background-color: white;
+    padding: 2px 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.cotas_participantes .numbers {
+    width: 45%;
+    margin: 4px;
+
+}
+
+.rounded-3 {
     background-color: rgba(27, 138, 81, 0.356) !important;
 }
+
 .container-fluid {
     background-color: rgba(255, 255, 255, 0.767) !important;
     border-radius: 8px;
 }
-.tituloCont{
-    display: flex;
-    align-items: center;
-}
 
-.titulos{
-    background-color: rgba(27, 138, 81) ;
+
+
+.titulos {
+    background-color: rgba(27, 138, 81);
     text-align: center;
     border-radius: 8px;
     margin-top: 20px;
@@ -31,23 +45,41 @@ body{
     font-weight: bold;
 }
 
-.numbers{
-    margin: 0;
+.numbers {
+    border: 1px solid black;
+    margin: 4px 0px;
     font-weight: bold;
-    
+    border-radius: 8px;
+    background-color: #198754;
+    color: white;
 }
 
-.headerCard{
+.headerCard {
     text-align: center;
+
 }
 
-.naoPago{
+.naoPago {
     color: red;
     font-weight: bold;
 }
+
+.infosApostas {
+    min-width: 16rem;
+    margin-left: 0px 20px;
+}
+
+
+.containerCotas {
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
 
-    .infosApostas{
+    .infosApostas {
         margin: 0 auto !important;
         margin-bottom: 20px !important;
     }
