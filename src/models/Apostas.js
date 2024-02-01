@@ -17,6 +17,11 @@ const ApostasSchema = new Schema({
         required: true,
         default: 'Aguardando Pagamento'
     },
+    quantidade: {
+        type: [Number],
+        required: true,
+        default: 0
+    },
     status: {
         type: String,
         required: true

@@ -8,19 +8,15 @@ class ApostasController {
     //CREATE
     static async criarAposta(req, res) {
 
-
         const dadosRecebidos = req.body;
-
-
-
-
 
         //Cria o DOC
         const newAposta = {
-            nome: dadosRecebidos.usuario.nome,
+            nome: dadosRecebidos.usuario.nome.toLowerCase(),
             telefone: dadosRecebidos.usuario.telefone,
             insta: dadosRecebidos.usuario.insta,
             numeros: dadosRecebidos.numeros,
+            quantidade: dadosRecebidos.numeros,
             valorAposta: dadosRecebidos.valor,
             status: 'Aguardando pagamento..',
             data: Date.now()
@@ -117,19 +113,6 @@ class ApostasController {
         }
     }
 
-    //BUSCA NUMEROS
-    static async buscaNumeros(req, res) {
-        await Apostas.find().then((apostas) => {
-
-            const numeros = extraiNumeros(apostas)
-
-            res.render('index', { numeros: numeros })
-        }).catch((err) => {
-            console.log('ERRO: ' + err);
-            req.flash('error_msg', 'Houve um erro ao listar as apostas.. tente novamente')
-            res.redirect('/')
-        })
-    }
 
     //LISTA APOSTAS PRO USUARIO
     static async listaApostasUSER(req, res) {
@@ -141,21 +124,32 @@ class ApostasController {
             res.redirect('/')
         })
     }
-}
+    //LISTA APOSTA UNICA PRO USER
+    //FIND ONE
+    static async acessarAposta(req, res) {
 
+        Apostas.find({ telefone: req.body.telefone, nome: req.body.nome.toLowerCase() }).then((apostas) => {
+            if (apostas) {
+                res.render('usuarios/minhasCotasPainel', { apostas: apostas })
+            } else {
+
+                req.flash('error_msg', 'Cotas não encontradas! Porfavor confira seus dados!')
+                res.redirect('/minhas-cotas')
+
+            }
+        }).catch((err) => {
+            console.log('ERRO: ' + err)
+            req.flash('error_msg', 'Erro interno, tente novamente!')
+            res.redirect('/')
+
+        })
+
+    }
+}
 
 module.exports = ApostasController
 
-function extraiNumeros(numeros) {
-    var lista = []
-    numeros.forEach(element => {
-        element.numeros.forEach(e => {
-            lista.push(e)
-        })
-    });
 
-    return lista
-}
 
 function geraCotas(qntdCotas) {
     var numerosAleatorios = [];
