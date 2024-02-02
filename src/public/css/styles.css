@@ -397,5 +397,15 @@ body {
         width: auto
     }
 
+    .menu>a {
+        flex: 0.5;
+
+    }
+
+
+    .titleOfert {
+        text-align: initial;
+    }
+
 
 }
