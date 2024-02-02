@@ -6,11 +6,11 @@ const botaoContinuar = document.querySelector('#continue')
 const botaoX = document.querySelector('.conteudo-x')
 const infoBilhetes = document.querySelector('#infoBilhetes')
 
-const valorRifa = parseFloat(0.50)
-const qntRifas = 500
+const valorRifa = parseFloat(0.08)
+const qntRifas = 5000
 
 
-infoBilhetes.innerHTML = `<strong>•Quantidade de bilhetes:</strong> Serão disponibilizados ${qntRifas} bilhetes numerados para a rifa, cada bilhete da rifa custa R$ ${valorRifa} e tem um número único.`
+infoBilhetes.innerHTML = `<strong>•Quantidade de bilhetes:</strong> Serão disponibilizados ${qntRifas} bilhetes numerados para a rifa, cada bilhete da rifa custa R$ ${valorRifa} (oito centavos) e tem um número único.`
 
 
 
@@ -47,7 +47,7 @@ function pegaDados(qntdNumeros) {
 
     //valor
     const valor = document.querySelector('#valorRS');
-    const valor2 = Number(valor.textContent.split('$')[1])
+    const valor2 = Number(valor.textContent.replace(/[^\d.,]/g, '').replace(',', '.'));
 
     //dados usuario
     dados.usuario = { nome: nome, telefone: telefone, insta: insta }
@@ -120,8 +120,9 @@ function addCotas(numero) {
 }
 
 function addValor(novoValor) {
-    let valorApagar = parseFloat(novoValor) * parseFloat(valorRifa)
-    valoraPagar.textContent = `R$ ${valorApagar}`
+    let valorApagar = (parseFloat(novoValor) * parseFloat(valorRifa)).toFixed(2);
+    // Formatando para o formato 'R$ 1,20'
+    valoraPagar.textContent = `R$ ${valorApagar.replace('.', ',')}`;
 }
 
 
@@ -165,3 +166,5 @@ pagar.addEventListener('click', () => {
     }
 
 })
+
+

@@ -2,34 +2,37 @@
 
 <div class="container-fluid py-5">
     <div class="tituloCont">
-        <h1 class="display-6 fw-bold">Sorteio Rifas.com</h1>
+        <h1>🍀</h1>
+        <h1 class="display-6 fw-bold tituloMenu">Reizim das Rifas.com</h1>
+        <h1>🍀</h1>
 
-        <!--<img src="../public/img/logo.png" style="width: 200px;">-->
     </div>
 
     <!--SÓ APARECE SE O USUARIO ESTIVER DESLOGADO // ESSA VARIAVEL USER VEM LA VARIAVEL GLOBAL FLASH USER-->
     {{#if user}}
     <h2>Seja bem vindo {{user.nome}}</h2>
     {{else}}
-    <h5 class="titleOfert">Quer ganhar vários prémios por R$0,50 centavos?<br> Partice do sorteio e concorra!</h5>
+    <h5 class=" titleOfert">🪙 Quer ganhar vários prémios por apenas R$0,08 centavos? 🪙<br>🚀 Participe do sorteio e
+        concorra! 🚀</h5>
     {{/if}}
 
+    <div class="menu">
+        <a href="/" class="btn btn-success ">Inicio</a>
+        <a href="/participantes" class="btn btn-success ">Participantes</a>
+        <a class="btn btn-success m-2" data-bs-toggle="collapse" href="#collapseExample99" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Prêmios
+        </a>
 
-    <a href="/" class="btn btn-success ">Inicio</a>
-    <a href="/participantes" class="btn btn-success ">Participantes</a>
-    <a class="btn btn-success m-2" data-bs-toggle="collapse" href="#collapseExample99" role="button"
-        aria-expanded="false" aria-controls="collapseExample">
-        Prêmios
-    </a>
 
+        <a class="btn btn-success " data-bs-toggle="collapse" href="#collapseExample2" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Regras
+        </a>
 
-    <a class="btn btn-success " data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
-        aria-controls="collapseExample">
-        Regras
-    </a>
+        <a href="/minhas-cotas" class="btn btn-success ">Minhas cotas</a>
 
-    <a href="/minhas-cotas" class="btn btn-success ">Minhas cotas</a>
-
+    </div>
     <div class="collapse" id="collapseExample99">
         <div class="card card-body">
 

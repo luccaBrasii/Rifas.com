@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Roboto+Slab&display=swap');
+
 body {
     /*background-image: url("../img/bg.jpg");*/
     background-color: rgb(191, 231, 218);
     background-size: contain;
+    font-family: 'Roboto Slab', serif;
 }
 
 .containerNew {
@@ -12,6 +15,12 @@ body {
     border-radius: 8px;
     text-align: start;
     padding: 10px;
+}
+
+.tituloMenu {
+    font-family: 'Honk', system-ui;
+    font-size: 54px;
+    text-align: center;
 }
 
 .premio-1,
@@ -39,22 +48,33 @@ body {
 }
 
 .container-fluid {
-    background-color: #e2e5baa8 !important;
+    background-color: #e3f2eb !important;
     border-radius: 8px;
 }
 
 .containerOld {
-    display: flex;
+    width: 100%;
 }
 
 .tituloCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.container-fluid>a {
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu>a {
     width: 130px;
     margin: 4px;
+    height: 40px;
 }
 
 
@@ -318,8 +338,21 @@ body {
 
 
 
+.pixCopiaCola {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+}
 
+.pixCopiaCola button {
+    margin-bottom: 10px;
+}
 
+.pixCopiaCola input {
+    width: 100%;
+}
 
 @media (max-width: 768px) {
 
@@ -357,7 +390,7 @@ body {
 
     .pixQR,
     .infosApostas {
-        width: auto;
+        width: 100%;
     }
 
     .titleOfert {

@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const ApostasController = require('../controllers/ApostasController')
 
 //MIDDLEWARE
-const { middleware } = require('../helpers/middleware')
+const { middleware, eAdmin } = require('../helpers/middleware')
 
 
 module.exports = app => {
@@ -20,16 +20,16 @@ module.exports = app => {
     app.post('/enviar-dados', ApostasController.criarAposta);
 
 
-    app.get('/adm-painel', ApostasController.listaApostas);
+    app.get('/adm-painel', eAdmin, ApostasController.listaApostas);
 
 
     app.get('/pagamento/:id', ApostasController.postUnico);
 
     //LIBERA APOSTA
-    app.get('/liberaAposta/:id', ApostasController.liberaAposta);
+    app.get('/liberaAposta/:id', eAdmin, ApostasController.liberaAposta);
 
     //DELETA APOSTA
-    app.get('/deletaAposta/:id', ApostasController.deleteAposta)
+    app.get('/deletaAposta/:id', eAdmin, ApostasController.deleteAposta)
 
 
     //ROTA DE VISUALIZAR APOSTAS USUARIOS

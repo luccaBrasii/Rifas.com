@@ -5,7 +5,7 @@
     <div class="row row-cols-1 containerCotas">
         {{#each apostas}}
 
-        <div class="card text-white bg-success m-1 infosApostas col" style="max-height: none">
+        <div class="card text-white bg-success m-1 infosApostas col" style="height: auto">
             <div class="card-header headerCard">
                 <h5 style="text-align: center;">#{{this.quantidade}} Cotas: </h5>
                 <div class="cotas_participantes">
@@ -19,11 +19,12 @@
                     <p class="numbers">{{this}}</p>
                     {{/each}}
                     {{/if}}
+
                 </div>
 
                 {{#if (maior this.quantidade )}}
                 <strong>
-                    <p>VER TUDO</p>
+                    <p class="verTudo">VER TUDO</p>
                 </strong>
                 {{else}}
 

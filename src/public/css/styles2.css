@@ -16,7 +16,7 @@
     border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
-    max-height: 108px;
+    height: 108px;
     overflow: hidden;
 
 }
@@ -24,6 +24,7 @@
 .cotas_participantes .numbers {
     width: 45%;
     margin: 4px;
+    letter-spacing: 2px;
 
 }
 
@@ -39,12 +40,13 @@
 
 
 .titulos {
-    background-color: rgba(27, 138, 81);
+    background-color: rgb(21, 96, 247);
     text-align: center;
     border-radius: 8px;
     margin-top: 20px;
     color: white;
     font-weight: bold;
+    width: 100%;
 }
 
 .numbers {
@@ -68,7 +70,7 @@
 
 .infosApostas {
     min-width: 16rem;
-    max-height: 315px;
+    height: 315px;
     margin-left: 0px 20px;
 }
 
@@ -78,6 +80,10 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.verTudo {
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

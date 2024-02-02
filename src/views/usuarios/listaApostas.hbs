@@ -3,7 +3,7 @@
 
 
 <div class="container">
-    <h5 class="titulos">Participantes: </h5>
+    <h5 class="titulos" style="padding: 6px;">Participantes: </h5>
     <div class="row row-cols-1 containerCotas">
         {{#each apostas}}
 
@@ -25,7 +25,7 @@
 
                 {{#if (maior this.quantidade )}}
                 <strong>
-                    <p>VER TUDO</p>
+                    <p class="verTudo">ver tudo</p>
                 </strong>
                 {{else}}
 
@@ -37,9 +37,9 @@
                 <p class="card-text"><strong>Participante:</strong> {{this.nome}}</p>
 
                 {{#if (eq this.status 'Aguardando pagamento..') }}
-                <p class="card-text status naoPago">{{this.status}}</p>
+                <p class="card-text status naoPago"><strong>{{this.status}}</strong></p>
                 {{else}}
-                <p class="card-text status pago">{{this.status}}</p>
+                <p class="card-text status pago"><strong>{{this.status}}</strong></p>
                 {{/if}}
 
             </div>

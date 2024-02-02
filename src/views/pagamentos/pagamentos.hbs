@@ -1,27 +1,35 @@
 <link href="../../public/css/styles.css" rel="stylesheet">
 
+<hr>
 <section class="containerPagamento">
-    <div class="card text-white bg-success mb-3 infosUser" style="max-width: 18rem;">
-        <div class="card-header">Números salvos com sucesso!</div>
-        <div class="card-body">
-            <h5 class="card-title">Informações:</h5>
-            <hr>
-            <p class="card-text"><strong>Nome:</strong> {{apostas.nome}}</p>
-            <p class="card-text"><strong>Telefone:</strong> {{apostas.telefone}}</p>
-            <p class="card-text"><strong>Quantidade de números:</strong> {{apostas.numeros}}</p>
-            <p class="card-text"><strong>Status:</strong> {{apostas.status}}</p>
-        </div>
+  <div class="card text-white bg-success mb-3 infosUser" style="max-width: 18rem;">
+    <div class="card-header">Números salvos com sucesso!</div>
+    <div class="card-body">
+      <h5 class="card-title">Informações:</h5>
+      <hr>
+      <p class="card-text"><strong>Nome:</strong> {{apostas.nome}}</p>
+      <p class="card-text"><strong>Telefone:</strong> {{apostas.telefone}}</p>
+      <p class="card-text"><strong>Quantidade de números:</strong> {{apostas.numeros}}</p>
+      <p class="card-text"><strong>Status:</strong> {{apostas.status}}</p>
     </div>
+  </div>
 
-    <div class="pix card text-bg-light mb-3">
-        <h5>Para finalizar sua participação no sorteio, porfavor faça um pix no valor de R${{apostas.valorAposta}} para:</h5>
-        
-        <img src="../../public/img/qrCodePix.jpeg" class="pixQR">
-        <h5>Telefone: (62) 99697-3771</h5>
-        <p>Lucca Lopes Rodrigues - Banco Inter</p>
+  <div class="pix card text-bg-light mb-3 p-3">
+    <h5 style="text-align: center;">Para finalizar sua participação no sorteio, porfavor faça um pix no valor de
+      <strong>${{apostas.valorAposta}}</strong> para:
+    </h5>
 
-        <small>Liberação em até 5 minutos após o envio do comprovante</small>
+    <div class="pixCopiaCola">
+      <button type="button" class="btn btn-primary" id="iconeCopiar" onclick="CopyTexto('pix')">Copiar código</button>
+      <input id='pix' disabled type="text"
+        value="00020101021126580014br.gov.bcb.pix0136e5d436e8-b856-4f1a-aba6-bf3f9c5a832d5204000053039865802BR5921LUCCA LOPES RODRIGUES6007GOIANIA62070503***6304AEB9">
     </div>
+    <img src="../../public/img/qrCodePix.jpeg" class="pixQR">
+    <h5>Telefone: (62) 99697-3771</h5>
+    <p>Lucca Lopes Rodrigues - Banco Inter</p>
+
+    <small>Liberação em até 5 minutos após o pagamento</small>
+  </div>
 </section>
 
 
@@ -31,13 +39,28 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Orientações quanto ao pagamento..</h5>
-    <p class="card-text">Após o pagamento do pix, enviar o comprovante para o whatsapp (62) 99697-3771 ou email (LuccaBrasi.es@gmail.com), os números escolhidos serão salvos
-        em até 5 minutos após o pagamento.</p>
-    <div id="whatsapp">
-        <img  class="whatsButton" src="../../public/img/icons/whatsapp.png">
-    </div>
+    <p class="card-text">Liberação em até 5 minutos após o pagamento</p>
+
     <h5>Consulte <a href="/participantes">AQUI</a> todos os participantes</h5>
   </div>
 </div>
 
-<script src="../../public/js/whatsapp.js"></script>
+
+
+<script type="text/javascript">
+
+  function CopyTexto(id) {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    try {
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      alert('Pix copiado com sucesso!')
+    } catch (err) {
+      console.log('Não foi possível copiar!');
+    }
+  }
+
+</script>
