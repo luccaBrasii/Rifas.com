@@ -7,26 +7,17 @@ const botaoX = document.querySelector('.conteudo-x')
 const infoBilhetes = document.querySelector('#infoBilhetes')
 
 const valorRifa = parseFloat(0.08)
-const qntRifas = 5000
 
 
-infoBilhetes.innerHTML = `<strong>•Quantidade de bilhetes:</strong> Serão disponibilizados ${qntRifas} bilhetes numerados para a rifa, cada bilhete da rifa custa R$ ${valorRifa} (oito centavos) e tem um número único.`
-
+infoBilhetes.innerHTML = `<strong>•Quantidade de bilhetes:</strong> Serão disponibilizados cotas de bilhetes numerados para a rifa, cada bilhete da rifa custa R$ ${valorRifa} (oito centavos) e tem um número único.`
 
 
 botaoContinuar.addEventListener('click', () => {
 
     botaoContinuar.style.display = 'none'
-
-
 })
 
-
-
-
-
 //PARA MOSTRAR INFORMAÇÕES DO COMPRADOR
-
 
 function pegaDados(qntdNumeros) {
     const nome = document.querySelector('#nome').value
@@ -36,7 +27,6 @@ function pegaDados(qntdNumeros) {
 
     var listaNumeros = qntdNumeros
     var dados = {}
-
 
     //valor
     const valor = document.querySelector('#valorRS');
@@ -51,8 +41,6 @@ function pegaDados(qntdNumeros) {
 }
 
 
-
-
 //PARTE DOS PAGAMENTOS
 
 function renderizaDados(dados) {
@@ -65,20 +53,17 @@ function renderizaDados(dados) {
         body: JSON.stringify(dados)
     }).then(response => response.json())
         .then(data => {
-            console.log('Resposta do servidor:', data);
             if (data.success) {
                 // Redirecionar para a página de confirmação
                 window.location.href = `/pagamento/${data.apostaId}`;
             } else {
-                alert('Houve um erro ao enviar a aposta, tente novamente.');
+                alert('Houve um erro ao enviar os dados, tente novamente.');
             }
         })
         .catch(error => {
-            console.error('Erro:', error);
-            alert('Houve um erro ao enviar a aposta, tente novamente.');
+            alert('Houve um erro ao enviar os dados, tente novamente.');
         });
 }
-
 
 
 // 31/01/2024
@@ -90,13 +75,10 @@ const addCota = document.querySelector('#addCota')
 const removeCota = document.querySelector('#removeCota')
 
 
-
 qntdCotas.forEach((numero) => {
     numero.addEventListener('click', () => {
 
         addCotas(numero)
-
-
     })
 })
 
@@ -114,7 +96,6 @@ function addCotas(numero) {
 
 function addValor(novoValor) {
     let valorApagar = (parseFloat(novoValor) * parseFloat(valorRifa)).toFixed(2);
-    // Formatando para o formato 'R$ 1,20'
     valoraPagar.textContent = `R$ ${valorApagar.replace('.', ',')}`;
 }
 
@@ -159,5 +140,3 @@ pagar.addEventListener('click', () => {
     }
 
 })
-
-

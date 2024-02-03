@@ -1,17 +1,17 @@
 module.exports = {
 
-    middleware: function(req,res,next){
+    middleware: function (req, res, next) {
 
-        if(req.isAuthenticated()){
+        if (req.isAuthenticated()) {
             return next()
         }
         req.flash("error_msg", "Você precisa estar logado!")
         res.redirect('/')
     },
 
-    eAdmin: function(req,res,next){
+    eAdmin: function (req, res, next) {
 
-        if(req.isAuthenticated() && req.user.eAdmin === 1){
+        if (req.isAuthenticated()) {
             return next()
         }
         req.flash("error_msg", "Você precisa ser ADM!")

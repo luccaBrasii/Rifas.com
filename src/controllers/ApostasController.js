@@ -23,25 +23,14 @@ class ApostasController {
         };
 
         try {
-            //Salva o DOC no banco de dados
+            
             var NovaAposta = await new Apostas(newAposta).save();
-            //Armazena a mensagem na varivel flash 'success_msg'
-            console.log('Salvo com sucesso!, dados: ' + NovaAposta)
-            /*
-            req.flash('success_msg',`aposta registrada com sucesso!`)
-            res.redirect('/')
-            */
-
             const apostaId = NovaAposta._id;
-            // Armazena a mensagem na variável flash 'success_msg'
+
             req.flash('success_msg', 'Aposta registrada com sucesso!');
-            // Envia o ID da aposta como resposta JSON
             res.status(200).json({ success: true, apostaId });
         } catch (err) {
-            //Armazena a mensagem na varivel flash 'error_msg'
-            console.log('Erro ao cadastrar!', err);
             req.flash('error_msg', 'Houve um erro ao registrar a aposta, tente novamente!')
-
             res.redirect('/')
         }
 

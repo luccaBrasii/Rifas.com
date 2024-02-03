@@ -46,8 +46,14 @@ body {
     background-color: #e3f2eb;
 }
 
-.premio p {
-    text-align: justify;
+.premio h1 {
+    padding: 8px;
+}
+
+.premio h1:last-child {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0px;
+    border-radius: 8px;
 }
 
 .premio>.carrosel {
@@ -60,7 +66,6 @@ body {
     width: 300px;
     height: 300px;
     background-size: cover;
-    border: 1px solid black;
     border-radius: 8px;
 }
 
