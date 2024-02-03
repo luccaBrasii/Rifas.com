@@ -18,13 +18,6 @@ botaoContinuar.addEventListener('click', () => {
 
     botaoContinuar.style.display = 'none'
 
-    //EXECUTA SE FOR MOBILE
-    if (window.innerWidth < 768) {
-        navBar.classList.add('expande');
-
-
-        navBar.classList.remove('expande');
-    }
 
 })
 

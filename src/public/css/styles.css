@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&family=Roboto+Slab&display=swap');
 
 body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     /*background-image: url("../img/bg.jpg");*/
     background-color: rgb(191, 231, 218);
     background-size: contain;
     font-family: 'Roboto Slab', serif;
 }
 
+
+
 .containerNew {
-    background-color: #e2e5baa8;
+    background-color: #d4d4d4a8;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     border-radius: 8px;
     text-align: start;
     padding: 10px;
+    width: 100%;
 }
 
 .tituloMenu {
@@ -23,11 +29,50 @@ body {
     text-align: center;
 }
 
-.premio-1,
-.premio-2,
-.premio-3 {
-    padding: 10px;
-    border: 2px solid white;
+.premios {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.premio {
+    padding: 4px;
+    border: 2px solid lightgrey;
+    width: 50%;
+    border-radius: 8px;
+    background-color: #e3f2eb;
+}
+
+.premio p {
+    text-align: justify;
+}
+
+.premio>.carrosel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.carousel>button {
+    border: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+}
+
+cinza {
+
+    color: rgb(81, 80, 80);
 }
 
 .containerNew>h1,
@@ -103,9 +148,7 @@ body {
 
 .navbarrr {
     width: 100%;
-    margin: 10px;
-    right: 0;
-    bottom: 0;
+    margin: 0px;
     padding: 4px;
     border-radius: 6px;
     text-align: center;
@@ -118,55 +161,8 @@ body {
     padding: 10px !important;
 }
 
-.expande {
-    animation: expandir 0.5s ease;
-}
 
-.contrai {
-    animation: contrai 0.5s ease;
-}
 
-/* @keyframes para a animação */
-@keyframes expandir {
-    0% {
-        width: 30%;
-        /* Largura inicial de 30% */
-    }
-
-    100% {
-        width: 90%;
-        /* Largura final automática */
-    }
-}
-
-/* @keyframes para a animação */
-@keyframes contrai {
-    0% {
-        width: 90%;
-        /* Largura inicial de 30% */
-    }
-
-    100% {
-        width: 30%;
-        /* Largura final automática */
-    }
-}
-
-.conteudo-x {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 0 0 8px;
-    background-color: #fb1414;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
 
 .topo {
     z-index: 1;
@@ -399,7 +395,15 @@ body {
 
     .menu>a {
         flex: 0.5;
+        margin: 2px;
+    }
 
+    .menu>a:last-child {
+        flex: 1;
+    }
+
+    .menu {
+        justify-content: flex-start;
     }
 
 
@@ -407,5 +411,16 @@ body {
         text-align: initial;
     }
 
+    .navbarrr {
+        width: 110%;
+    }
 
+    .carousel-item img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .premio {
+        width: 100%;
+    }
 }
