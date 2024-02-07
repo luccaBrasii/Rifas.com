@@ -20,16 +20,16 @@ module.exports = app => {
     app.post('/enviar-dados', ApostasController.criarAposta);
 
 
-    app.get('/adm-painel', eAdmin, ApostasController.listaApostas);
+    app.get('/adm-painel', middleware, ApostasController.listaApostas);
 
 
     app.get('/pagamento/:id', ApostasController.postUnico);
 
     //LIBERA APOSTA
-    app.get('/liberaAposta/:id', eAdmin, ApostasController.liberaAposta);
+    app.get('/liberaAposta/:id', middleware, ApostasController.liberaAposta);
 
     //DELETA APOSTA
-    app.get('/deletaAposta/:id', eAdmin, ApostasController.deleteAposta)
+    app.get('/deletaAposta/:id', middleware, ApostasController.deleteAposta)
 
 
     //ROTA DE VISUALIZAR APOSTAS USUARIOS
